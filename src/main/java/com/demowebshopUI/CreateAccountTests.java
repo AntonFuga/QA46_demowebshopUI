@@ -6,15 +6,20 @@ import org.testng.annotations.Test;
 
 public class CreateAccountTests extends TestBase {
 
-    @Test(enabled = false)
+    @Test
     public void newTestUserRegistrationPositive() {
-        click(By.cssSelector("[href='/login']"));
 
-        type(By.name("email"), "antonfuga1991@gmail.com");
-        type(By.name("password"), "Anton0807!$");
+            click(By.cssSelector("[href='/register']"));
 
-        click(By.name("registration"));
+            type(By.name("email"), "antonfuga19911@gmail.com");
 
-        Assert.assertTrue(isElementPresent(By.xpath("//button[.='Sign Out']")), "Sign Out кнопка не найдена!");
+            type(By.name("password"), "Anton08017!$");
+            //click on Registration
+            click(By.name("registration"));
+
+            //verify SingOut button is displayed
+            Assert.assertTrue(isElementPresent(By.xpath("//button[.='Sign Out']")));
+
+        }
     }
-}
+
